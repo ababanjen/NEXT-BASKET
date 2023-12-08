@@ -14,7 +14,7 @@ type CardTypes = {
 
 const Card = ({ data, setShowDialog }: CardTypes) => {
   const { push } = useRouter()
-  const { setCart, cart } = useGlobalStore()
+  const { setCart } = useGlobalStore()
   const addToBasket = () => {
     setCart(data)
     if (setShowDialog) setShowDialog(true)
@@ -59,7 +59,7 @@ const Card = ({ data, setShowDialog }: CardTypes) => {
         </div>
         <div className="flex gap-1 items-center">
           {[...new Array(5)].map((_, key) => (
-            <Rating key={key} />
+            <Rating rate={data.rating} index={key} key={key} />
           ))}
           <span className="text-xs mt-1">{`(${data.rating})`}</span>
         </div>
