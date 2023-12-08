@@ -1,5 +1,5 @@
-export const imgLoader = ({ src }: any) => {
-  return src;
+export const imgLoader = ({ src, width, quality }: any) => {
+  return `${src}?w=${width}&q=${quality || 75}`;
 }
 
 export const formatCurrency = (number: number) => {
@@ -9,3 +9,5 @@ export const formatCurrency = (number: number) => {
   return result
 }
 
+
+export const getPercentage = (n1: number, n2: number) => Math.trunc(((n1 / n2) * 100))
