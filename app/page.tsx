@@ -17,11 +17,13 @@ const Home = ({ setShowDialog }: Props) => {
   }
 
   return (
-    <div className='columns-5 max-w-7xl mx-auto space-y-4 m-6'>
-      {products?.map(product => (
-        <Card key={product.id} data={product} setShowDialog={setShowDialog} />
-      ))}
-    </div>
+    <>
+      <div className='columns-2 md:columns-3 lg:columns-5 max-w-7xl mx-auto space-y-4 m-6'>
+        {products?.map(product => (
+          <Card key={product.id} data={product} setShowDialog={setShowDialog} />
+        ))}
+      </div>
+    </>
   )
 }
 

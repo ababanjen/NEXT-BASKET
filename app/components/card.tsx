@@ -6,7 +6,7 @@ import Image from 'next/image'
 import { formatCurrency, getPercentage, imgLoader } from "@/helpers/utils"
 import clsx from "clsx"
 import { useRouter } from "next/navigation"
-import useGlobalStore from "@/store/global"
+import useGlobalStore from "@/store/globals"
 import { withDialogTypes } from "./withDialog"
 type CardTypes = {
   data: any
@@ -22,7 +22,7 @@ const Card = ({ data, setShowDialog }: CardTypes) => {
   const onSelectItem = () => push(`/${data.id}`)
 
   return (
-    <div className="flex flex-col shadow group/item cursor-pointer">
+    <div className="flex flex-col shadow group/item cursor-pointer break-inside-avoid-column">
       <div className="flex flex-col p-2 justify-between gap-2 overflow-hidden" onClick={onSelectItem}>
         <div className="relative w-full">
           <div className="relative w-full">

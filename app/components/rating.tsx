@@ -2,43 +2,11 @@ import { useEffect, useState } from "react"
 
 const Rating = ({ rate, index }: { rate: number, index: number }) => {
   const [fill, setFill] = useState<boolean>(false)
+
   useEffect(() => {
-    switch (index) {
-      case 0: {
-        if (rate > 1.9 || rate <= 0) {
-          setFill(true)
-          return
-        }
-        setFill(false)
-        return
-      }
-      case 1: {
-        if (rate > 2.9 || rate <= 1) {
-          setFill(true)
-          return
-        }
-        setFill(false)
-        return
-      }
-      case 2: {
-        if (rate > 3.9 || rate <= 2.9) {
-          setFill(true)
-          return
-        }
-        setFill(false)
-        return
-      }
-      case 3: {
-        if (rate >= 4 || rate <= 3.9) {
-          setFill(true)
-          return
-        }
-        setFill(false)
-        return
-      }
-      default: setFill(false)
-    }
+    setFill((index === 0 && rate >= 1) || (index === 1 && rate >= 2) || (index === 2 && rate >= 3) || (index === 3 && rate >= 2) || (index === 4 && rate >= 5))
   }, [])
+
   return (
     <span
       className="text-primary [&>svg]:h-5 [&>svg]:w-5"

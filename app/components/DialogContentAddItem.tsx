@@ -1,4 +1,4 @@
-import useGlobalStore from "@/store/global"
+import useGlobalStore from "@/store/globals"
 import Close from "./icons/close"
 import { last } from "lodash"
 import { formatCurrency, imgLoader } from "@/helpers/utils"

@@ -3,15 +3,8 @@ import { uniqBy } from 'lodash'
 type Pokemon = {
   cart: any[],
   setCart: (data: { (val: string): any }) => void
-}
 
-const remove = (arr: any[], func: any) =>
-  Array.isArray(arr)
-    ? arr.filter(func).reduce((acc, val) => {
-      arr.splice(arr.indexOf(val), 1);
-      return acc.concat(val);
-    }, [])
-    : [];
+}
 
 const useGlobalStore = create<Pokemon>((set) => ({
   cart: [],
